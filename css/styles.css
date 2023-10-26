@@ -68,7 +68,6 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
-  margin-right: 76px;
   display: inline-block;
   padding: 24px 0;
 }
@@ -148,7 +147,6 @@ address > ul > li > a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
-  padding: 24px 0;
   display: block;
   align-items: center;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -813,30 +811,51 @@ address > ul > li > a {
     margin-bottom: 24px;
 }
 
+.check-input {
+    
+}
+
 .check-text {
+    color: #8E8F99;
+    /* Small Text */
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
-    color: #8e8f99;
+    align-items: center;
+    display: block;
+}
+
+.check-text a {
+    color: #4D5AE5;
+    /* Link Text */
+    line-height: 16px;
+    text-decoration-line: underline;
+}
+
+.check-text span {
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    fill: transparent;
+}
+
+.check-input:checked + .check-text span {
+    background-color: #404bbf;
+    border: none;
+    fill: #F4F4FD;
 }
 
 .checkbox-span {
-    width: 16px;
-    height: 16px;
+    
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 2px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     fill: transparent;
-    margin-right: 8px;
-}
-
-.checkbox-span[tabindex="0"]:focus {
-    border: 2px solid black;
 }
 
 .submit-btn {
@@ -861,21 +880,7 @@ address > ul > li > a {
     background-color: #404bbf;
 }
 
-.input-modal-window-checkbox:checked + .check-text .checkbox-span {
-    background-color: #404bbf;
-    border: none;
-    fill: #f4f4fd;
-}
 
-.checkbox-link-a {
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 16px;
-    letter-spacing: 0.48px;
-    text-decoration-line: underline;
-    color: #4d5ae5;
-}
 
 /* MEDIA-MODAL */
 /* Header-Mobile-Start */
@@ -895,6 +900,16 @@ address > ul > li > a {
  .mobile-menu {
     display: none;
  }
+
+ .header-logo {
+    margin-right: 76px;
+}
+
+.info-item {
+    width: calc((100% - 72px) / 4);
+}
+
+
  .footer-form {
     margin-left: 0;
     margin-right: 0;
@@ -916,18 +931,27 @@ address > ul > li > a {
    .address {
         display: flex;
   }
-   
+   .address-list {
+        flex-direction: column;
+        gap: 12px;
+   }
    .studio {
         color: #2e2f42;
    }
    
-   
+   .header-logo {
+        
+   }
    .header-menu-item {
         display: block;
         position: relative;
         letter-spacing: 0.02em;
         transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
    }
+   .header-logo-color {
+    color: #2e2f42;
+    margin-right: 120px;
+  }
    
    .li-class-link {
         padding-top: 24px;
@@ -995,11 +1019,12 @@ address > ul > li > a {
    }
    
    .hero {
-        background: var(--GREY, rgba(46, 47, 66, 0.70));
+        background-color: var(--GREY, rgba(46, 47, 66, 0.70));
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
             url(../images/hero-bg-tablet.jpg);
         background-repeat:no-repeat ;
         background-size: cover;
+        padding: 112px 0;
    }
    
    @media (min-device-pixel-ratio:2),
@@ -1052,10 +1077,16 @@ address > ul > li > a {
    .info {
         padding: 96px 0;
    }
-   
+
+   .info-list{
+
+   }
+
    .info-item {
         max-width: 356px;
+
    }
+
    
    .info-text{
         font-weight: 500;
@@ -1098,9 +1129,9 @@ address > ul > li > a {
         grid-template-columns:  1fr 1fr;
         gap: 72px 24px;
    }
-   .team{
+   .team {
         padding-top: 96px;
-        padding-bottom: 0;
+        padding-bottom: 96px;
    }
    .team-list{
         display: grid;
@@ -1109,9 +1140,8 @@ address > ul > li > a {
         justify-content: center;
         align-items: center;
         gap: 32px;
-        padding-left: 108px;
-        padding-right: 108px;
-        padding-bottom: 96px;
+        padding-left: 93px;
+        padding-right: 93px;
    }
    .portfolio {
         padding-top: 96px;
@@ -1119,7 +1149,7 @@ address > ul > li > a {
    .footer-container{
         flex-direction: row;
         flex-wrap: wrap;
-        max-width: 580px;
+        max-width: 582px;
         gap: 72px 24px;
    }
    .footer-bottom{
@@ -1127,30 +1157,17 @@ address > ul > li > a {
    }
 
 }
-   
-   @media (min-width:767px){
-     .backdrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(46, 47, 66, 0.4);
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        }
+  
      .footer-form {
         margin-left: 0;
         margin-right: 0;
      }
      
-}
+
 
 
 /* Mobile-Version-320 */
-@media (min-width: 320px) and (max-width: 767px){
+@media (max-width: 767px) {
   .container {
         max-width: 320px;
         padding-left: 16px;
@@ -1172,8 +1189,6 @@ address > ul > li > a {
         max-width: 320px;
         margin-left: 0;
   }
-
-  
   .modal{
         width: 288px;
         min-height: 623px;
@@ -1233,13 +1248,13 @@ address > ul > li > a {
         width: 288px;
 }
 
-.button{
-    margin-bottom: 0;
+    .button{
+        margin-bottom: 0;
   
 }
-.info-list{
-    flex-direction: column;
-    gap: 72px;
+    .info-list{
+        flex-direction: column;
+        gap: 72px;
 }
 .info-subtitle{
     text-align: center;
@@ -1266,39 +1281,39 @@ address > ul > li > a {
 .our-team {
     margin-bottom: 72px;
 }
-.portfolio-list {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 48px 24px;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-}
+    .portfolio-list {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 48px 24px;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
 
-.container-footer-logo {
-    margin-right: 0;
-}
-.portfolio-item {
-  
-}
-.footer-container {
-    flex-direction: column;
-    justify-content: center;
-    gap: 72px;
-}
-.footer-logo {
-    display: block;
-    text-align: center;
-    margin: 0 auto 17px;
-    font-family: Raleway;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 21px; /* 116.667% */
-    letter-spacing: 0.54px;
-    text-transform: uppercase;
-}
+    .container-footer-logo {
+        margin-right: 0;
+    }
+    .portfolio-item {
+    
+    }
+    .footer-container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 72px;
+    }
+    .footer-logo {
+        display: block;
+        text-align: center;
+        margin: 0 auto 17px;
+        font-family: Raleway;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px; /* 116.667% */
+        letter-spacing: 0.54px;
+        text-transform: uppercase;
+    }
 .footer-social-icon {
     margin: 0 auto;
 }
@@ -1321,7 +1336,7 @@ address > ul > li > a {
 .footer-form-btn {
     width: 165px;
     height: 40px;
-    margin-left: 53px;
+    margin: 0 auto;
 
 }
 .footer-input{
@@ -1406,14 +1421,17 @@ address > ul > li > a {
     visibility: visible;
     pointer-events: auto
 }
+.nav-burger-list {
+    margin-bottom: auto;
+}
+
 .burger-list{
-    padding-top: 24px;
+    padding: 72px;
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding-bottom: 168px;
- 
 }
+
 /* Header 2 */
 .li-burger {
     font-family: Roboto, sans-serif;
@@ -1428,8 +1446,8 @@ address > ul > li > a {
 .blue-color-for-span {
     color:  #404BBF;
 }
-.adress-menu:hover,
-.adress-menu:focus {
+.address-menu:hover,
+.address-menu:focus {
     color:  #404BBF;
 }
 .address-list-contact:hover,
@@ -1437,15 +1455,17 @@ address > ul > li > a {
     color:  #404BBF;
 }
 
-.adress-burger {
+.address-address-burger{
+    margin-bottom: 48px;
+}
+
+.address-burger {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    padding-bottom: 48px;
-  
+    gap: 24px;  
 }
 /* Header 3 */
-.li-burger-adress {
+.li-burger-address {
     color: var #434455;
     font-family: Roboto, sans-serif;
     font-size: 20px;
