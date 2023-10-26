@@ -815,6 +815,7 @@ address > ul > li > a {
     
 }
 
+
 .check-text {
     color: #8E8F99;
     /* Small Text */
@@ -1167,9 +1168,10 @@ address > ul > li > a {
 
 
 /* Mobile-Version-320 */
+
 @media (max-width: 767px) {
   .container {
-        max-width: 320px;
+        width: 320px;
         padding-left: 16px;
         padding-right: 16px;
         margin-left: auto;
@@ -1221,7 +1223,7 @@ address > ul > li > a {
             url(../images/hero-bg-mob.jpg);
         background-repeat:no-repeat ;
         padding-bottom: 72px;
-        max-width: 320px;
+        width: 320px;
         padding-top: 72px;
 
   }
